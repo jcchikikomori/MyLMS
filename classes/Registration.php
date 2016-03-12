@@ -4,7 +4,7 @@
  * Class registration
  * handles the user registration
  */
-class Registration
+class Registration extends Init
 {
     /**
      * @var object $db_connection The database connection
@@ -25,6 +25,8 @@ class Registration
      */
     public function __construct()
     {
+        // parent was from the extended class
+        parent::__construct();
         if (isset($_POST["register"])) {
             $this->registerNewUser();
         }

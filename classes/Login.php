@@ -4,7 +4,7 @@
  * Class login
  * handles the user's login and logout process
  */
-class Login
+class Login extends Init
 {
     /**
      * @var object The database connection
@@ -25,6 +25,8 @@ class Login
      */
     public function __construct()
     {
+        parent::__construct();
+
         // create/read session, absolutely necessary
         session_start();
 

@@ -5,27 +5,15 @@
  * Learning Management System Prototype
  * Made with pure PHP
  *
- * ORIGINAL SOURCE
- * ----------------------------------------------------------------------------------------------------------------
- * A simple, clean and secure PHP Login Script / MINIMAL VERSION
- * For more versions (one-file, advanced, framework-like) visit http://www.php-login.net
+ * Uses PHP SESSIONS, OOP features, modern password-hashing and salting and gives the basic functions a proper system needs.
  *
- * Uses PHP SESSIONS, modern password-hashing and salting and gives the basic functions a proper login system needs.
- *
- * @author Panique
- * @link https://github.com/panique/php-login-minimal/
+ * @author jccultima123, dlanperez
+ * @link https://github.com/jccultima123/MyLMS/
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
-// checking for minimum PHP version
-if (version_compare(PHP_VERSION, '5.3.7', '<')) {
-    exit("Sorry, Simple PHP Login does not run on a PHP version smaller than 5.3.7 !");
-} else if (version_compare(PHP_VERSION, '5.5.0', '<')) {
-    // if you are using PHP 5.3 or PHP 5.4 you have to include the password_api_compatibility_library.php
-    // (this library adds the PHP 5.5 password hashing functions to older versions of PHP)
-    require_once("libraries/password_compatibility_library.php");
-}
-
+// checking requirements first using this class
+require_once("classes/Init.php");
 // include the configs / constants for the database connection
 require_once("config/db.php");
 
@@ -37,11 +25,10 @@ require_once("classes/Login.php");
 $login = new Login();
 
 // ... ask if we are logged in here:
-if ($login->isUserLoggedIn() == true) {
+if ($login->isUserLoggedIn()) {
     // the user is logged in. you can do whatever you want here.
     // for demonstration purposes, we simply show the "you are logged in" view.
     include("views/logged_in.php");
-
 } else {
     // the user is not logged in. you can do whatever you want here.
     // for demonstration purposes, we simply show the "you are not logged in" view.
