@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class login
+ * Class auth
  * handles the user's login and logout process
  */
-class Login extends Init
+class Auth extends Core
 {
     /**
      * @var object The database connection
@@ -26,6 +26,16 @@ class Login extends Init
     public function __construct()
     {
         parent::__construct();
+        // ... ask if we are logged in here:
+        if ($this->isUserLoggedIn()) {
+            // the user is logged in. you can do whatever you want here.
+            // for demonstration purposes, we simply show the "you are logged in" view.
+            include(ROOT."views/logged_in.php");
+        } else {
+            // the user is not logged in. you can do whatever you want here.
+            // for demonstration purposes, we simply show the "you are not logged in" view.
+            include(ROOT."views/not_logged_in.php");
+        }
 
         // create/read session, absolutely necessary
         session_start();

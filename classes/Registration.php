@@ -4,7 +4,7 @@
  * Class registration
  * handles the user registration
  */
-class Registration extends Init
+class Registration extends Core
 {
     /**
      * @var object $db_connection The database connection

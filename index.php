@@ -16,8 +16,8 @@
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
-// configs
-require_once("config.php"); // include the configs / constants for the database connection
+// configs (NOTE: Add your other configs on this syntax sample down)
+// require_once("config.php");
 
 // classes
 require_once("classes/Init.php"); // checking requirements first using this class
@@ -26,4 +26,4 @@ require_once("classes/Core.php"); // core components first such as main classes 
 // load the login class
 require_once("classes/Auth.php");
 
-// $login = new Login();
+$auth = new Auth();
