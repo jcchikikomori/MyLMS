@@ -1,6 +1,7 @@
 # MyLMS
 
-A simple LMS (Learning Management System Prototype), with secured PHP login script. Uses the ultra-modern & future-proof PHP 5.5 BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those functions available in these versions too). 
+A simple LMS (Learning Management System Prototype)
+It comes with secured PHP login script. Uses the ultra-modern & future-proof PHP 5.5 BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those functions available in these versions too). 
 
 ## Requirements
 
@@ -8,8 +9,16 @@ A simple LMS (Learning Management System Prototype), with secured PHP login scri
 - MySQL 5 database (please use a modern version of MySQL (5.5, 5.6, 5.7) as very old versions have a exotic bug that
 [makes PDO injections possible](http://stackoverflow.com/q/134099/1114320).
 - activated mysqli (last letter is an "i") extension (activated by default on most server setups)
+- Composer (PHP Dependency Manager, required for installing 3rd party class)
+- NodeJS and Bower package manager
 
 ## Installation (quick setup)
+
+Do these commands!
+
+`$ bower install`<br />
+`$ composer install`<br />
+`$ cp config.php.example config.php`
 
 Create a database *login* and the table *users* via the SQL statements in the `_install` folder.
 Change mySQL database user and password in `config/db.php` (*DB_USER* and *DB_PASS*).
